@@ -270,4 +270,4 @@ what's indexed and what `query_gemini.py` queries against.
   (for genre/origin) simply won't match, which is why the CLI auto-retries
   unfiltered on an empty result rather than failing outright.
 - `Cast` is cleaned in the notebook but not currently carried into chunk metadata
-  or made filterable.
+  or made filterable(due to null data redundancy).
