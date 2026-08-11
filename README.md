@@ -1,25 +1,12 @@
-# Wikipedia Movie Plots — RAG Pipeline
+# TypeB Movie Plots Assignment — RAG Pipeline
 
 Indexes a subset of the [Wikipedia Movie Plots](https://www.kaggle.com/datasets/jrobischon/wikipedia-movie-plots)
 dataset into ChromaDB and answers natural-language questions over it with
 Gemini, returning a structured, validated JSON answer.
 
-```
-┌─────────────────────┐        ┌──────────────────────────┐
-│  Rag_Pipeline.ipynb   │  --->  │  chroma_db/  (persistent) │
-│  clean → chunk → embed│        │  collection "movie_plots" │
-└─────────────────────┘        └──────────────┬───────────┘
-                                                │
-                                                ▼
-┌─────────────────────┐   plan   ┌──────────────────────┐  retrieve   ┌──────────────────┐
-│  user's NL question  │ ───────► │ Gemini (query planner) │ ─────────► │ ChromaDB search  │
-└─────────────────────┘          └──────────────────────┘             └────────┬─────────┘
-                                                                                 │ context
-                                                                                 ▼
-                                                                    ┌───────────────────────┐
-                                                                    │ Gemini (answer, JSON)  │
-                                                                    └───────────────────────┘
-```
+
+[ ![Alt Text](full_image.drawio.png) ]
+
 
 ---
 
