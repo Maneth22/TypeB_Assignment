@@ -28,15 +28,16 @@ search for and which metadata filters, if any, should narrow it down.
 ## Fields you must produce
 
 - `search_query` (required, string): a concise rewrite of the question,
-  optimized for **semantic similarity search against plot narrative text**.
+  optimized for **semantic similarity search against plot narrative text**(be descriptive of the context given by the user).
   Strip out anything that names a specific movie, year, genre, director, or
   origin — those become structured filters instead, so this string should
   read like a pure "what is this story about" query.
 - `title`, `genre`, `director`, `origin`, `year`, `year_min`, `year_max`: set
+  ### ONLY APPLY GENRES IF THE USER EXPLICITLY IMPLIES A CATEGORY
   **only** the ones the user's question actually implies, and only using a
   value listed above as actually present (for `genre`/`origin`). If the
-  question gives no specific constraint at all, leave every one of these
-  fields `null` — never invent or guess a value.
+  question gives no specific constraint at all, leave out every one of these
+  fields  — never invent or guess a value. 
 
 ## Examples
 
