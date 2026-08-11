@@ -1,0 +1,16 @@
+# Rag_Pipeline.ipynb — data loading, EDA, chunking, embedding, ChromaDB indexing
+pandas==3.0.5
+matplotlib==3.11.1
+nltk==3.10.2
+tqdm==4.70.0
+sentence-transformers==5.7.0
+transformers==5.15.0
+chromadb==1.5.9
+
+# query_gemini.py / query_planner_prompt.md — retrieval-augmented CLI
+google-genai==2.17.0
+pydantic==2.13.4
+python-dotenv==1.2.2
+
+# NLTK also needs runtime data (not pip-installable), downloaded by the notebook's
+# Requirements cell: punkt, punkt_tab, stopwords
